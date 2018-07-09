@@ -1,0 +1,73 @@
+
+/* IE */
+$legacy-support-for-ie: true !default;
+
+@mixin clearfix { 
+	@if $legacy-support-for-ie { 
+		*zoom: 1; 
+	}
+	&:before, &:after { 
+		content: ""; 
+		display: table; 
+	} 
+	&:after { 
+		clear: both; 
+		overflow: hidden; 
+	} 
+}
+
+/* fixed height center  */
+@mixin height-center($value) {
+	height: $value;
+	line-height: $value;
+}
+
+/* horizontal-center  */
+@mixin horizontal-center { 
+	margin-left: auto; 
+	margin-right: auto; 
+}
+
+/* singleline-ellipsis  $substract base %  */
+@mixin singleline-ellipsis($substract: 0) {
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	width: 100% - $substract; 
+}
+
+/* to up arrow   */
+@mixin triangle-up($value, $color) {
+	width: 0;
+    height: 0;
+    border-left: $value solid transparent;
+    border-right: $value solid transparent;
+    border-bottom: $value solid $color;
+}
+
+/* to down arrow   */
+@mixin triangle-down($value, $color) {
+	width: 0;
+    height: 0;
+    border-left: $value solid transparent;
+    border-right: $value solid transparent;
+    border-top: $value solid $color;
+}
+
+/* to left arrow   */
+@mixin triangle-left($value, $color) {
+	width: 0;
+    height: 0;
+    border-top: $value solid transparent;
+	border-right: $value solid $color;
+	border-bottom: $value solid transparent;
+}
+
+/* to right arrow   */
+@mixin triangle-right($value, $color) {
+	width: 0;
+    height: 0;
+    border-top: $value solid transparent;
+    border-left: $value solid $color;
+    border-bottom: $value solid transparent;
+}
