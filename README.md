@@ -6,6 +6,8 @@ npm install
 ```
 ## USAGE
 
+包含gulp自动化的常用插件
+
 
 ### File Tree
 
